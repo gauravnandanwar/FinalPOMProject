@@ -51,22 +51,11 @@ public class TestQaForm {
 	@FindBy(how = How.XPATH, using = "//button[@id='submit']")
 	WebElement submitButton;
 
-	// Defining all the user actions (Methods) that can be performed in the Facebook
-	// home page
-	// This method is to set Email in the email text box
 	public void firstName(String strfName) throws IOException {
-		/*
-		 * Excel_RW excel = new Excel_RW(); ArrayList data =excel.getData(strfName); for
-		 * (i=1,i<data.)
-		 */
-		/*
-		 * firstName.sendKeys(strfName); Excel_RW xl = new Excel_RW(); ArrayList data
-		 * =xl.getData("FName"); int size = data.size(); System.out.println(size);
-		 */
+
 		firstName.sendKeys(strfName);
 	}
 
-// This method is to set Password in the password text box
 	public void lastName(String strlName) {
 		lastName.sendKeys(strlName);
 	}
@@ -98,19 +87,9 @@ public class TestQaForm {
 
 	public void download() {
 		fileDownload.click();
-		/*
-		 * String sourceLocation = fileDownload.getAttribute("href"); String
-		 * wget_command = "cmd /c C:\\Wget\\wget.exe -P D: --no-check-certificate " +
-		 * sourceLocation; try { Process exec = Runtime.getRuntime().exec(wget_command);
-		 * int exitVal = exec.waitFor(); System.out.println("Exit value: " + exitVal); }
-		 * catch (InterruptedException | IOException ex) {
-		 * System.out.println(ex.toString()); }
-		 */
+
 	}
 
-	/*
-	 * public void autoTool(int autoT) { selectAutoTool.get(autoT).click(); }
-	 */
 	public void continent(int con) {
 		Select selectContinents = new Select(driver.findElement(By.xpath("//select[@id='continents']")));
 		selectContinents.selectByIndex(con);
@@ -127,20 +106,20 @@ public class TestQaForm {
 	public void submitForm() {
 		submitButton.click();
 	}
-	
-	public void excelRead(String row) throws IOException{
+
+	public void excelRead(String row) throws IOException {
 		Excel_RW excel = new Excel_RW();
-		ArrayList data =excel.getData(row);
-		
+		ArrayList data = excel.getData(row);
+
 		int size = data.size();
 		System.out.println(size);
-		for (int i=1;i<size;i++) {
-			//System.out.println(excel.getData(row));
+		for (int i = 1; i < size; i++) {
+			// System.out.println(excel.getData(row));
 			int index = data.lastIndexOf(row);
-			//System.out.println(index);
+			// System.out.println(index);
 		}
-	//System.out.println(data.get(1));  
-		 
+		// System.out.println(data.get(1));
+
 	}
-	
+
 }

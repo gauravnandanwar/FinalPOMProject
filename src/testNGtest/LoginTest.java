@@ -6,12 +6,12 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import testNG.FbHomePage;
+import testNG.HomePage;
 import testNG.TestQaForm;
 import testNG.sampleCheck;
 import utilityClass.Excel_RW;
 
-public class FbLoginTest extends TestBase {
+public class LoginTest extends TestBase {
 	@Test
 	public void init() throws Exception {
 
@@ -37,10 +37,6 @@ public class FbLoginTest extends TestBase {
 		fillForm.submitForm();
 		fillForm.excelRead("FName");
 
-		/*
-		 * FbHomePage homepage = PageFactory.initElements(driver, FbHomePage.class);
-		 * homepage.clickOnProfileDropdown(); homepage.verifyLoggedInUserNameText();
-		 * homepage.clickOnLogoutLink();
-		 */
+	
 	}
 }
